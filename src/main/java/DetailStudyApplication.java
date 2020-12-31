@@ -1,3 +1,5 @@
+import com.alibaba.fastjson.JSON;
+import icu.bibilailai.core.bean.User;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import org.springframework.beans.BeansException;
@@ -11,6 +13,7 @@ import org.springframework.context.*;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +23,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class DetailStudyApplication {
 
 	public static void main(String[] args) {
+
+		SpringApplication.run(DetailStudyApplication.class, args);
+
+
+
 		/*禁止重启*/
 //		System.setProperty("spring.devtools.restart.enabled", "false");
 		/*自定义横幅*/
@@ -98,9 +106,14 @@ public class DetailStudyApplication {
 
 
 
-	@GetMapping("/hello")
+	@PostMapping("/getname")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name){
-		return String.format("{workspace:\"d:/workspace\", name:\"liangtao\"}");
+		User user = new User();
+//		System.out.println(user.getName());
+//		System.out.println(user.getFullName());
+		String s = JSON.toJSONString(user);
+
+		return s;
 	}
 
 }

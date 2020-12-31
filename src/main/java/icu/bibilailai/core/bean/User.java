@@ -3,13 +3,16 @@ package icu.bibilailai.core.bean;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
 
 @JsonIgnoreProperties(value = {"fullName", "comment"})
 public class User {
     private Long id;
+    @Value("${your_name}")
     private String name;
+    @Value("${my.secret}")
     private String fullName;
     private String comment;
     private String mail;
