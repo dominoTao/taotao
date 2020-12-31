@@ -36,8 +36,8 @@ public class MyBean implements CommandLineRunner {
 
 
     @Override
-    public void run(String... args) throws Exception {
-        // Do something...
+    public void run(String args) throws Exception {
+        // Do something
         Arrays.stream(args).peek(t-> System.out.println(t)).collect(Collectors.toList());
     }
 }
