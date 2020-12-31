@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DetailstudyApplication {
 
 	public static void main(String[] args) {
+		/*禁止重启*/
+		System.setProperty("spring.devtools.restart.enabled", "false");
 		SpringApplication.run(DetailstudyApplication.class, args);
 	}
 	@GetMapping("/hello")
