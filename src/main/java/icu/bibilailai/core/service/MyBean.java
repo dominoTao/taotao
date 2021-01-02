@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class MyBean implements CommandLineRunner {
+public class MyBean /*implements CommandLineRunner*/ {
     @Autowired
     public MyBean(ApplicationArguments args){
         boolean debug = args.containsOption("debug");
@@ -35,9 +35,9 @@ public class MyBean implements CommandLineRunner {
     }
 
 
-    @Override
-    public void run(String args) throws Exception {
-        // Do something
-        Arrays.stream(args).peek(t-> System.out.println(t)).collect(Collectors.toList());
-    }
+//    @Override
+//    public void run(String args) throws Exception {
+//        // Do something
+//        Arrays.stream(args).peek(t-> System.out.println(t)).collect(Collectors.toList());
+//    }
 }

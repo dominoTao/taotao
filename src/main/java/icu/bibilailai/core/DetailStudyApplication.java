@@ -1,24 +1,17 @@
+package icu.bibilailai.core;
+
 import com.alibaba.fastjson.JSON;
 import icu.bibilailai.core.bean.User;
-import javafx.application.Application;
-import javafx.scene.Parent;
-import org.springframework.beans.BeansException;
-import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.*;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@ComponentScan(basePackages = {"icu.bibilailai.core"})
+//@ComponentScan(basePackages = {"icu.bibilailai.core"})
 @RestController
 public class DetailStudyApplication {
 
@@ -35,7 +28,7 @@ public class DetailStudyApplication {
 //		SpringApplication.run(DetailstudyApplication.class, args);
 
 
-//		SpringApplication app = new SpringApplication(DetailStudyApplication.class);
+//		SpringApplication app = new SpringApplication(icu.bibilailai.core.DetailStudyApplication.class);
 //		app.addListeners();
 //		app.setBannerMode(Banner.Mode.OFF);
 //		app.run(args);
