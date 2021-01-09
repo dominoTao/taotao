@@ -10,12 +10,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+import java.lang.String;
+
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 //@ComponentScan(basePackages = {"icu.bibilailai.core"})
 @RestController
 public class DetailStudyApplication {
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		Base64.Decoder decoder = Base64.getDecoder();
+//		byte[] decodeBytes = decoder.decode("new_loveYouForever".getBytes("UTF-8"));
+//		new String(decodeBytes, "UTF-8");
+		String text = "new_loveYouForever";
+		Base64.Encoder encoder = Base64.getEncoder();
+		String s = encoder.encodeToString(text.getBytes("UTF-8"));
+		System.out.println(s);
+		String s1 = new String(decoder.decode(s), "UTF-8");
+		System.out.println(s1);
 
-	public static void main(String[] args) {
+
+//		System.out.println(new String(decoder.decode(text), "UTF-8"));
+
+	}
+	public static void main1(String[] args) {
 
 		SpringApplication.run(DetailStudyApplication.class, args);
 
